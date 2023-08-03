@@ -6,8 +6,8 @@ import tensorflow as tf
 from tensorflow.keras.applications.resnet50 import preprocess_input 
 from tensorflow.keras.preprocessing.image import img_to_array    
 
-st.title('Identification')
-st.markdown('A Deep learning application to identify ...')
+st.title('Jacaranda Identification')
+st.markdown('A Deep learning application to identify if a satellite image clip contains Jacaranda trees. The predicting result will be "Jacaranda", or "Others"')
 
 uploaded_file = st.file_uploader("Upload an image file", type="jpg")
 
@@ -15,7 +15,7 @@ img_height = 224
 img_width = 224
 class_names = ['Jacaranda', 'Others']
 
-model = tf.keras.models.load_model('saved_model')
+model = tf.keras.models.load_model('model')
 
 if uploaded_file is not None:
     img = Image.open(uploaded_file)
